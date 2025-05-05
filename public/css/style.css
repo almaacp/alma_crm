@@ -1,95 +1,213 @@
+/* Reset dasar */
+body, h1, h2, h3, p, ul, li, input, button, select {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Warna utama */
+:root {
+  --primary-color: #3498db; /* Biru yang lebih kalem */
+  --secondary-color: #5fa8d2; /* Biru muda yang lebih lembut */
+  --light-bg: #f5f8fc;
+  --light-text: #333;
+  --dark-bg: #343a40;
+  --hover-color: #2980b9; /* Biru lebih gelap saat hover */
+  --card-bg-1: #6cb2eb; /* Biru lembut untuk Card */
+  --card-bg-2: #a2d4f7; /* Biru muda untuk Card */
+}
+
+/* Link */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Navbar */
+.custom-navbar {
+  background-color: var(--primary-color);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-logout {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+.btn-logout:hover {
+  background-color: #f8f9fa;
+  color: var(--primary-color);
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+/* Body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f6f8;
-    color: #333;
-  }
-  
-  header {
-    background-color: #0077cc;
-    padding: 1rem;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  main {
-    padding: 2rem;
-  }
-  
-  footer {
-    background-color: #eee;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-  
-  h1, h2 {
-    color: #0077cc;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-    background-color: white;
-  }
-  
-  table, th, td {
-    border: 1px solid #ccc;
-  }
-  
-  th, td {
-    padding: 0.75rem;
-    text-align: left;
-  }
-  
-  button {
-    padding: 0.5rem 1rem;
-    background-color: #0077cc;
-    border: none;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #005fa3;
-  }
-  
-  .login-container {
-    max-width: 400px;
-    margin: 4rem auto;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .login-container form input {
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }  
+  background: linear-gradient(to right, var(--light-bg), #e7efff);
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--light-text);
+}
+
+/* Login Container */
+.login-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.login-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.login-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+.form-control-custom {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+.form-control-custom:focus {
+  border: 1px solid var(--secondary-color);
+  box-shadow: 0 0 0 0.2rem rgba(102, 16, 242, 0.2);
+}
+
+/* Button Gradient */
+.btn-gradient {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.btn-gradient:hover {
+  background: linear-gradient(to right, #1e7e34, #2b9e5e);
+  color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* Card Hover Effect */
+.card-hover {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s;
+}
+.card-hover:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Card custom background */
+.card-blue-1 {
+  background-color: var(--card-bg-1);
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.card-blue-2 {
+  background-color: var(--card-bg-2);
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect pada card */
+.card-blue-1:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.card-blue-2:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* Pastikan teks diubah warna juga saat hover */
+.card-hover:hover .card-title,
+.card-hover:hover p,
+.card-hover:hover h2,
+.card-hover:hover i {
+  color: white !important;
+}
+
+/* Normal state font */
+.card-title,
+.card p,
+.card h2,
+.card i {
+  color: #212529;
+}
+
+/* Ikon transisi */
+.card i {
+  font-size: 55px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Hover scale ikon */
+.card-hover:hover i {
+  transform: scale(1.1);
+}
+
+/* Judul card */
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Angka besar di dalam card */
+.card h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Style tambahan tabel */
+.table-style-custom {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Tombol outline */
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn-outline-success:hover {
+  background-color: #2ecc71;
+  color: white;
+}
+.btn-outline-danger:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Table hover effect */
+.table-hover tbody tr:hover {
+  background-color: var(--light-bg);
+  transition: background 0.2s ease;
+}
