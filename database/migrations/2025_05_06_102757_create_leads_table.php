@@ -16,8 +16,6 @@ return new class extends Migration
             $table->string('nama');
             $table->string('kontak');
             $table->string('alamat');
-            $table->foreignId('product_id')->constrained('products')->onDelete('cascade'); // Foreign key ke tabel products
-            $table->enum('status', ['Belum Diproses', 'Diproses', 'Dibatalkan'])->default('Belum Diproses');
             $table->timestamps();
         });        
     }

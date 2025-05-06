@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -17,7 +18,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->enum('status', ['Aktif', 'Tidak Aktif'])->default('Aktif');
-            $table->date('tanggal_mulai_layanan');
+            $table->timestamp('tanggal_mulai_layanan')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamps();
         });        
     }

@@ -18,7 +18,8 @@ return new class extends Migration
         $table->enum('status', ['Pending', 'Approved', 'Rejected']);
         $table->date('tanggal');
         $table->boolean('manager_approval')->default(false);
-        $table->foreignId('customer_id')->constrained('customers')->onDelete('cascade'); // Relasi ke Customer
+        $table->foreignId('lead_id')->constrained('leads')->onDelete('cascade');
+        $table->foreignId('customer_id')->constrained()->nullable(); // tambahkan nullable()
         $table->timestamps();
     });
 }

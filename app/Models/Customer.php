@@ -9,7 +9,7 @@ class Customer extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'alamat', 'layanan', 'status', 'tanggal_mulai'];
+    protected $fillable = ['nama', 'alamat', 'layanan', 'status', 'tanggal_mulai', 'product_id'];
 
     // Relasi jika customer terkait dengan leads atau project
     public function leads()

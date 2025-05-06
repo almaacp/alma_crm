@@ -29,15 +29,7 @@
         <input type="password" id="password" name="password" class="form-control form-control-custom" placeholder="Masukkan password" required>
         <i id="togglePasswordIcon" class="toggle-password bi bi-eye" onclick="togglePassword()"></i>
       </div>
-    </div>
-
-    <div class="form-options d-flex justify-content-between align-items-center mb-3">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="remember">
-        <label class="form-check-label" for="remember">Ingat saya</label>
-      </div>
-      <a href="#" class="small text-primary">Lupa password?</a>
-    </div>
+    </div><br>
 
     <button type="submit" class="btn btn-gradient w-100">LOGIN</button>
   </form>

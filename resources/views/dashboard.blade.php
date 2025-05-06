@@ -32,7 +32,7 @@
                             <i class="bi bi-arrow-right-circle-fill" style="font-size: 24px; color: var(--primary-color);"></i>
                         </div>
                     </div>
-                </a>
+                </a>                
             </div>
 
             <!-- Customer Aktif -->

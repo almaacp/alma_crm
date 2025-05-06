@@ -28,18 +28,22 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 // Halaman leads (calon customer)
 Route::get('/leads', function () {
-    return view('leads');
+    return view('leads');  // Mengarah ke leads.blade.php
 })->name('leads.index');
+Route::resource('/leads', LeadController::class);
+Route::post('/leads/{id}/proses', [LeadController::class, 'proses'])->name('leads.proses');
+Route::post('/leads/{id}/batal', [LeadController::class, 'batal'])->name('leads.batal');
 
 // Halaman produk
 Route::resource('/product', ProductController::class);
 
 // Halaman project
-Route::get('/projects', function () {
-    return view('projects');
-})->name('projects.index');
+Route::resource('projects', ProjectController::class);
+Route::put('/projects/{id}/approve', [ProjectController::class, 'approve'])->name('projects.approve');
+Route::put('/projects/{id}/reject', [ProjectController::class, 'reject'])->name('projects.reject');
 
 // Halaman customer
-Route::get('/customers', function () {
-    return view('customers');
-})->name('customers.index');
+Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
+
+// Buat customer dari project yang sudah approved
+Route::post('/customers/from-project/{id}', [CustomerController::class, 'storeFromProject'])->name('customers.fromProject');
