@@ -7,7 +7,12 @@
 <div class="container mt-3">
     <h1 class="mb-4">Selamat datang di CRM PT. Smart!</h1>
     <p class="lead text-muted" style="font-weight: 400">
-        Di halaman ini, Anda dapat mengakses berbagai informasi terkait calon pelanggan, pelanggan aktif, proyek yang sedang diproses, dan produk yang ditawarkan. Mari optimalkan proses penjualan dan layanan untuk meningkatkan kepuasan pelanggan.
+        @if(auth()->user()->role === 'sales')
+            Di halaman ini, Anda dapat mengakses berbagai informasi terkait calon pelanggan dan pelanggan aktif. Mari optimalkan proses penjualan dan layanan untuk meningkatkan kepuasan pelanggan.
+        @endif
+        @if(auth()->user()->role === 'manager')
+            Di halaman ini, Anda dapat mengakses berbagai informasi terkait pelanggan aktif, proyek yang sedang diproses, dan produk yang ditawarkan. Mari optimalkan proses penjualan dan layanan untuk meningkatkan kepuasan pelanggan.
+        @endif
     </p><br><br>
 
     <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
@@ -88,7 +93,7 @@
 
             <!-- Master Produk -->
             <div class="col">
-                <a href="{{ route('products.index') }}" class="text-decoration-none">
+                <a href="{{ route('product.index') }}" class="text-decoration-none">
                     <div class="card card-hover px-3 py-3 h-100" style="border-left: 5px solid var(--secondary-color);">
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">

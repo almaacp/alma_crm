@@ -32,9 +32,7 @@ Route::get('/leads', function () {
 })->name('leads.index');
 
 // Halaman produk
-Route::get('/products', function () {
-    return view('products');
-})->name('products.index');
+Route::resource('/product', ProductController::class);
 
 // Halaman project
 Route::get('/projects', function () {
