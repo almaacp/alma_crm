@@ -5,8 +5,14 @@
 @section('content')
 
 <div class="login-container">
-  <h4 class="login-title text-center">Selamat Datang!</h4>
-  <form action="/dashboard" method="get" class="login-form">
+  <!-- Keterangan CRM PT. Smart dengan warna hitam -->
+  <div class="text-center mb-4">
+    <h1 class="fw-bold text-dark" style="font-size: 2rem; letter-spacing: 2px;">CRM PT. Smart</h1>
+    <p class="text-muted" style="font-size: 1rem;">Selamat datang! Silakan login untuk menggunakan banyak fitur CRM.</p>
+  </div>
+  
+  <form method="POST" action="{{ route('login.process') }}">
+    @csrf
 
     <div class="input-group-custom">
       <label for="email" class="form-label-custom">Email</label>

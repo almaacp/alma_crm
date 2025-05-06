@@ -43,7 +43,6 @@ body.login-page {
   padding-top: 0; /* pastikan login tidak ikut terdorong */
 }
 
-
 /* Navbar */
 .custom-navbar {
   background-color: var(--primary-color);
@@ -95,7 +94,7 @@ body.login-page {
 }
 
 .login-container {
-  max-width: 400px;
+  max-width: 700px;
   width: 100%;
   margin: 5rem auto 0;
   background: rgba(255, 255, 255, 0.4); /* transparan putih */

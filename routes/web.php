@@ -13,14 +13,18 @@ use App\Http\Controllers\DashboardController;
 // });
 
 // Halaman login
-Route::get('/', function () {
-    return view('login');
-})->name('login');
+// Route login (menampilkan form login)
+Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
+
+// Route untuk melakukan login
+Route::post('/', [AuthController::class, 'login'])->name('login.process');
 
 // Halaman dashboard
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 // Halaman leads (calon customer)
 Route::get('/leads', function () {

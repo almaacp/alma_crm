@@ -14,17 +14,24 @@
     <div class="login-blur-overlay"></div>
   @endif
 
-  <!-- Navbar -->
+<!-- Navbar hanya ditampilkan jika bukan di halaman login -->
+@if (!Request::is('/'))
   <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container-fluid d-flex justify-content-between align-items-center px-4">
       <a class="navbar-brand text-white fw-bold" href="/dashboard">CRM PT. Smart</a>
-      @if (!Request::is('/'))
-      <a href="/" class="btn btn-logout">
-        <i class="bi bi-box-arrow-right"></i> LOGOUT
-      </a>      
-      @endif
+
+      <div class="d-flex align-items-center gap-3">
+        <span class="text-white d-flex align-items-center">
+          <i class="bi bi-person-circle me-2" style="font-size: 1.3rem;"></i>
+          {{ ucfirst(auth()->user()->role) }}
+        </span>
+        <a href="/" class="btn btn-logout">
+          <i class="bi bi-box-arrow-right"></i> LOGOUT
+        </a>
+      </div>
     </div>
   </nav>
+@endif
 
   <!-- Main Content -->
   <main class="container py-5 page-content @if(Request::is('/')) login-main @endif">
@@ -35,8 +42,6 @@
   <footer class="text-center mt-auto py-3 footer-custom @if(Request::is('/')) footer-login @endif">
     <small>&copy; {{ date('Y') }} PT. Smart. All rights reserved.</small>
   </footer>  
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="{{ asset('bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js') }}"></script>
 </body>
+
 </html>
