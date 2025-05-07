@@ -1,4 +1,4 @@
-# 🧠 **CRM PT Smart** – Sistem CRM & Manajemen Proyek Modern
+# **CRM PT Smart**
 
 Selamat datang di **CRM PT Smart**, aplikasi berbasis web yang dirancang untuk membantu tim Sales dan Manager dalam mengelola calon pelanggan (leads), proyek, produk, serta proses persetujuan (approval) secara terintegrasi.
 
@@ -114,22 +114,6 @@ Akses aplikasi di [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 Untuk memahami alur fungsional aplikasi, silakan lihat **Use Case Diagram** berikut:
 
 🔗 [Lihat Use Case Diagram (draw.io)](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Use%20Case%20Diagram%20CRM%20PT.%20Smart.drawio&dark=auto#R%3Cmxfile%3E%3Cdiagram%20name%3D%22Page-1%22%20id%3D%22B6BeEDAqxDx5YN3n8M2i%22%3E7ZpdU6MwFIZ%2FTS%2FdKZ8tl7Xa3ZnVGWe6O6uXKUSIBsKkwbb%2B%2Bg0lfCXUVrZC3Xqj5BAOyZsnycmhA2Marr9TEAe3xIN4oA%2B99cC4Gui6o1v8b2rYZAbbNjODT5GXmbTSMEevUBiHwpogDy5rFRkhmKG4bnRJFEGX1WyAUrKqV3skuP7WGPhQMcxdgFXrH%2BSxILOOrWFp%2FwGRH%2BRv1obiTgjyysKwDIBHVhWTcT0wppQQll2F6ynEqXa5Ltlzsx13i4ZRGLFDHrBmyfD1Mb6ILy9Gz4u583vyNLsQXl4ATkSH57zrS9Fitsll4I2P08skxBOXETowLl8gZYgLdQMWEN%2BRJWKIRLzKgjBGwkqFCUZ%2BeoORmFsDFmJe0PglSRhGEZwWQzfkRtEg%2Fixc7%2BypVujHuYMkhIxueJX8AUNILpjT8zFZlSOYVwkqg2cLGxDM%2BIXnUlZ%2BIZR9h8q6ovItiDg59HPrbGsnprOh6HxDfBQpKnNXfP3ghctVgBicx8BN76z4ClZX7ggiGVZdpJGq0bhBI%2FOjNDIVjX6BcAECbsMQeOrU71Is3bTqRGmqWpreIJf1UXJZilw%2FISYYpN2ixEv4fOpTMFM7NcFsdQ6iALAUL7RM%2F7nJkq9bDWtfp7NS2iJMp2%2FdRm%2BC9gR7Bk0WzDD7FmysCKYKFHmTNAbkpYhEsC4KJUnkQU9sh1wGurmvFh7SwjcrL16tqzevNrVtFHpKFCkJy9tFEurC%2FbEYA9SH7I16RvNAVQbCemMcKMSAoZd6c5sGR7zhjqCIVWIrZwcHuYusm%2BKpajgqOSp2uHzlciRHmQ6Koy0rRbfb4%2BOcKz5mr%2FjIo25ILg7Fx7DrjopzV0f45Pvs%2BfFj98qPFE3zAKjl8jOWAgDL6pYf9eR9FH603vjRP8X29d%2BsP%2BpZ90z4sfrkx3ZkfvR2%2FJhmz%2FyoeYAz4Wd0Wvw47fixxrKjjvcvNTFyJvz0Gv8o%2FJh2y%2FXHls9xHfOj5okGug3CNHOB2XZkqyUUuTjxYGH0a1VEScKvApucIi9y5zhNql8C99nf8jglOM2557hWACYxjDLLDKU93dLngWWwRbgB6DVi9yXCvPRQuVPSnBY28iSoHQK07qaAeeAU2B%2FCafZxeJdWuSLD9K%2FZBsXRR%2BOupve%2BcG9c8zvE3To53A35eCJHhQcfT6R9QtM65r0pO%2FvFu1jey7CmY%2BJHBxK%2FP0d4NOJ3fUN%2BN%2FEjXSLe7Jb4poTybuLhmnHYPhHwLeFtM1GOCLx9IPD7D4XHAl4b1YE35Q9kBwMvf8KUHbUGnhfLnyVl1cvfdhnXfwE%3D%3C%2Fdiagram%3E%3C%2Fmxfile%3E)
-
----
-
-## 📂 **Lampiran & Rekomendasi Tools**
-
-Agar System Analyst lebih mudah memahami alur dan sistem ini, berikut beberapa tools yang dapat digunakan:
-
-* **draw\.io / diagrams.net** – untuk memvisualisasikan use case & ERD
-* **PostgreSQL** – backend database utama
-* **Laravel Artisan** – command line tool untuk Laravel
-
-Disertakan juga:
-
-* File `.drawio` Use Case
-* File `.sql` database siap pakai
-* Dokumentasi & data dictionary (jika diperlukan)
 
 ---
 
