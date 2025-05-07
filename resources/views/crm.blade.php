@@ -29,7 +29,7 @@
     <div class="d-flex align-items-center gap-3">
       <span class="text-white d-flex align-items-center">
         <i class="bi bi-person-circle me-2" style="font-size: 1.3rem;"></i>
-        {{ ucfirst(auth()->user()->role) }}
+        {{ ucfirst(auth()->user()?->role ?? 'Guest') }}
       </span>
       <a href="/" class="btn btn-logout">
         <i class="bi bi-box-arrow-right"></i> LOGOUT
@@ -52,7 +52,7 @@
       <div class="text-center my-3">
         <i class="bi bi-person-circle" style="font-size: 3rem;"></i>
         <p class="mt-2 mb-0">Selamat datang,</p>
-        <h6 class="fw-bold">{{ ucfirst(auth()->user()->role) }}</h6>
+        <h6 class="fw-bold">{{ ucfirst(auth()->user()?->role ?? 'Guest') }}</h6>
       </div>
 
       <hr class="border-light">
