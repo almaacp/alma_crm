@@ -1,66 +1,136 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# **CRM PT Smart**
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Selamat datang di **CRM PT Smart**, aplikasi berbasis web yang dirancang untuk membantu tim Sales dan Manager dalam mengelola calon pelanggan (leads), proyek, produk, serta proses persetujuan (approval) secara terintegrasi.
 
-## About Laravel
+Aplikasi ini dibangun menggunakan Laravel dan PostgreSQL, didesain dengan antarmuka yang ringan namun fungsional untuk mendukung efisiensi kerja tim.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✅ **Prasyarat Sistem**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sebelum memulai instalasi, pastikan Anda telah menyiapkan:
 
-## Learning Laravel
+* **PHP** (versi 8 atau lebih baru)
+* **Composer**
+* **Laravel 10.x**
+* **PostgreSQL** (versi terbaru)
+* **pgAdmin** (untuk pengelolaan database PostgreSQL secara grafis)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚀 **Langkah-langkah Instalasi & Konfigurasi**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1. **Kloning Repositori**
 
-## Laravel Sponsors
+```bash
+git clone https://github.com/username/crm-pt-smart.git
+cd crm-pt-smart
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 2. **Instal Dependensi**
 
-### Premium Partners
+```bash
+composer install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 3. **Unduh dan Impor Database**
 
-## Contributing
+**📦 Database SQL tersedia di Google Drive**
+🔗 [Unduh di sini](https://drive.google.com/drive/folders/1a5hptpBRGVJRERax1JUD18U20WzFiVrN?usp=sharing)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Cara Import Database di pgAdmin:
 
-## Code of Conduct
+1. Buka **pgAdmin**, login ke server PostgreSQL Anda.
+2. Klik kanan pada **Databases** → **Create** → **Database**, beri nama misalnya `crm_pt_smart`.
+3. Setelah database dibuat, klik kanan → **Query Tool**.
+4. Buka file `.sql` yang sudah Anda unduh, salin seluruh isinya ke query editor.
+5. Tekan tombol **▶ Run** untuk menjalankan skrip dan membuat seluruh struktur serta data awal.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+> ✅ Database siap digunakan setelah langkah ini!
 
-## Security Vulnerabilities
+### 4. **Konfigurasi `.env`**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Salin file konfigurasi dan sesuaikan kredensial database:
 
-## License
+```bash
+cp .env.example .env
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Edit file `.env`:
+
+```ini
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=alma_crm
+DB_USERNAME=[your_username]
+DB_PASSWORD=[your_password]
+```
+
+### 5. **Generate Key & Migrasi (Jika Diperlukan)**
+
+```bash
+php artisan key:generate
+php artisan migrate
+```
+
+### 6. **Jalankan Aplikasi**
+
+```bash
+php artisan serve
+```
+
+Akses aplikasi di [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+---
+
+## 🔐 **Login Akun Demo**
+
+| Role    | Email                    | Password   |
+| ------- | ------------------------ | ---------- |
+| Sales   | `user-sales@ptcrm.com`   | `12345678` |
+| Manager | `user-manager@ptcrm.com` | `12345678` |
+
+---
+
+## 📌 **Fitur Utama**
+
+### Untuk **Sales**:
+
+* Login & logout
+* Lihat dan tambahkan calon customer (leads)
+* Melihat list customer
+
+### Untuk **Manager**:
+
+* Login & logout
+* Menyetujui/menolak proyek dari leads
+* Mengelola data produk
+
+---
+
+## 🧩 **Diagram Use Case**
+
+Untuk memahami alur fungsional aplikasi, silakan lihat **Use Case Diagram** berikut:
+
+🔗 [Lihat Use Case Diagram (draw.io)](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Use%20Case%20Diagram%20CRM%20PT.%20Smart.drawio&dark=auto#R%3Cmxfile%3E%3Cdiagram%20name%3D%22Page-1%22%20id%3D%22B6BeEDAqxDx5YN3n8M2i%22%3E7ZpdU6MwFIZ%2FTS%2FdKZ8tl7Xa3ZnVGWe6O6uXKUSIBsKkwbb%2B%2Bg0lfCXUVrZC3Xqj5BAOyZsnycmhA2Marr9TEAe3xIN4oA%2B99cC4Gui6o1v8b2rYZAbbNjODT5GXmbTSMEevUBiHwpogDy5rFRkhmKG4bnRJFEGX1WyAUrKqV3skuP7WGPhQMcxdgFXrH%2BSxILOOrWFp%2FwGRH%2BRv1obiTgjyysKwDIBHVhWTcT0wppQQll2F6ynEqXa5Ltlzsx13i4ZRGLFDHrBmyfD1Mb6ILy9Gz4u583vyNLsQXl4ATkSH57zrS9Fitsll4I2P08skxBOXETowLl8gZYgLdQMWEN%2BRJWKIRLzKgjBGwkqFCUZ%2BeoORmFsDFmJe0PglSRhGEZwWQzfkRtEg%2Fixc7%2BypVujHuYMkhIxueJX8AUNILpjT8zFZlSOYVwkqg2cLGxDM%2BIXnUlZ%2BIZR9h8q6ovItiDg59HPrbGsnprOh6HxDfBQpKnNXfP3ghctVgBicx8BN76z4ClZX7ggiGVZdpJGq0bhBI%2FOjNDIVjX6BcAECbsMQeOrU71Is3bTqRGmqWpreIJf1UXJZilw%2FISYYpN2ixEv4fOpTMFM7NcFsdQ6iALAUL7RM%2F7nJkq9bDWtfp7NS2iJMp2%2FdRm%2BC9gR7Bk0WzDD7FmysCKYKFHmTNAbkpYhEsC4KJUnkQU9sh1wGurmvFh7SwjcrL16tqzevNrVtFHpKFCkJy9tFEurC%2FbEYA9SH7I16RvNAVQbCemMcKMSAoZd6c5sGR7zhjqCIVWIrZwcHuYusm%2BKpajgqOSp2uHzlciRHmQ6Koy0rRbfb4%2BOcKz5mr%2FjIo25ILg7Fx7DrjopzV0f45Pvs%2BfFj98qPFE3zAKjl8jOWAgDL6pYf9eR9FH603vjRP8X29d%2BsP%2BpZ90z4sfrkx3ZkfvR2%2FJhmz%2FyoeYAz4Wd0Wvw47fixxrKjjvcvNTFyJvz0Gv8o%2FJh2y%2FXHls9xHfOj5okGug3CNHOB2XZkqyUUuTjxYGH0a1VEScKvApucIi9y5zhNql8C99nf8jglOM2557hWACYxjDLLDKU93dLngWWwRbgB6DVi9yXCvPRQuVPSnBY28iSoHQK07qaAeeAU2B%2FCafZxeJdWuSLD9K%2FZBsXRR%2BOupve%2BcG9c8zvE3To53A35eCJHhQcfT6R9QtM65r0pO%2FvFu1jey7CmY%2BJHBxK%2FP0d4NOJ3fUN%2BN%2FEjXSLe7Jb4poTybuLhmnHYPhHwLeFtM1GOCLx9IPD7D4XHAl4b1YE35Q9kBwMvf8KUHbUGnhfLnyVl1cvfdhnXfwE%3D%3C%2Fdiagram%3E%3C%2Fmxfile%3E)
+
+---
+
+## 📅 **Catatan Pengerjaan**
+
+* **Tanggal mulai**: 5 Mei 2025
+* **Tanggal selesai**: 7 Mei 2025
+
+---
+
+## 🤝 **Kontribusi & Dukungan**
+
+Jika Anda tertarik mengembangkan atau menyempurnakan proyek ini:
+
+* Silakan fork, buat pull request, atau ajukan issue baru.
+* Sangat terbuka terhadap saran dan kolaborasi pengembangan lanjutan!
+
+---
+
+Semoga panduan ini mempermudah Anda dalam memahami dan menjalankan sistem **CRM PT Smart**.
