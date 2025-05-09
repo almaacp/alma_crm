@@ -23,8 +23,8 @@ Sebelum memulai instalasi, pastikan Anda telah menyiapkan:
 ### 1. **Kloning Repositori**
 
 ```bash
-git clone https://github.com/username/crm-pt-smart.git
-cd crm-pt-smart
+git clone https://github.com/almaacp/alma_crm.git
+cd alma_crm
 ```
 
 ### 2. **Instal Dependensi**
@@ -38,7 +38,7 @@ composer install
 #### Cara Membuat Database di pgAdmin:
 1. Buka **pgAdmin**, login ke server PostgreSQL Anda.
 2. Klik kanan pada **Databases** → **Create** → **Database**
-3. Beri nama database (contoh: `crm_pt_smart_new`)
+3. Beri nama database (contoh: `alma_crm`)
 4. Klik **Save** untuk membuat database baru
 
 ### 4. **Migrasi dan Seeding Database**
@@ -54,7 +54,7 @@ Pastikan nama database di `.env` sesuai dengan yang baru dibuat:
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
 DB_PORT=5432
-DB_DATABASE=crm_pt_smart_new  # Sesuaikan dengan nama database baru
+DB_DATABASE=alma_crm  # Sesuaikan dengan nama database baru
 DB_USERNAME=[your_username]
 DB_PASSWORD=[your_password]
 ```
