@@ -33,48 +33,39 @@ cd crm-pt-smart
 composer install
 ```
 
-### 3. **Unduh dan Impor Database**
+### 3. **Buat dan Setup Database Baru**
 
-**📦 Database SQL tersedia di Google Drive**
-🔗 [Unduh di sini](https://drive.google.com/drive/folders/1a5hptpBRGVJRERax1JUD18U20WzFiVrN?usp=sharing)
-
-#### Cara Import Database di pgAdmin:
-
+#### Cara Membuat Database di pgAdmin:
 1. Buka **pgAdmin**, login ke server PostgreSQL Anda.
-2. Klik kanan pada **Databases** → **Create** → **Database**, beri nama misalnya `crm_pt_smart`.
-3. Setelah database dibuat, klik kanan → **Query Tool**.
-4. Buka file `.sql` yang sudah Anda unduh, salin seluruh isinya ke query editor.
-5. Tekan tombol **▶ Run** untuk menjalankan skrip dan membuat seluruh struktur serta data awal.
+2. Klik kanan pada **Databases** → **Create** → **Database**
+3. Beri nama database (contoh: `crm_pt_smart_new`)
+4. Klik **Save** untuk membuat database baru
 
-> ✅ Database siap digunakan setelah langkah ini!
-
-### 4. **Konfigurasi `.env`**
-
-Salin file konfigurasi dan sesuaikan kredensial database:
-
+### 4. **Migrasi dan Seeding Database**
 ```bash
-cp .env.example .env
+php artisan migrate
+php artisan db:seed
 ```
 
-Edit file `.env`:
+### 5. **Konfigurasi `.env`**
+Pastikan nama database di `.env` sesuai dengan yang baru dibuat:
 
 ```ini
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
 DB_PORT=5432
-DB_DATABASE=alma_crm
+DB_DATABASE=crm_pt_smart_new  # Sesuaikan dengan nama database baru
 DB_USERNAME=[your_username]
 DB_PASSWORD=[your_password]
 ```
 
-### 5. **Generate Key & Migrasi (Jika Diperlukan)**
+### 6. **Generate Key (Jika Diperlukan)**
 
 ```bash
 php artisan key:generate
-php artisan migrate
 ```
 
-### 6. **Jalankan Aplikasi**
+### 7. **Jalankan Aplikasi**
 
 ```bash
 php artisan serve
