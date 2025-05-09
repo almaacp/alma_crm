@@ -59,7 +59,7 @@
 
       <!-- Navigation -->
       <ul class="nav flex-column">
-        @if(auth()->user()->role === 'sales')
+        @if(auth()->check() && auth()->user()->role === 'sales')
           <li class="nav-item mb-2">
             <a class="nav-link text-white d-flex align-items-center gap-2 px-3 py-2 rounded hover-menu" href="{{ route('leads.index') }}">
               <i class="bi bi-person-plus-fill bg-white text-primary p-1 rounded-circle"></i>
@@ -72,7 +72,7 @@
               Customer Aktif
             </a>
           </li>
-        @elseif(auth()->user()->role === 'manager')
+          @elseif(auth()->check() && auth()->user()->role === 'manager')
           <li class="nav-item mb-2">
             <a class="nav-link text-white d-flex align-items-center gap-2 px-3 py-2 rounded hover-menu" href="{{ route('projects.index') }}">
               <i class="bi bi-clipboard-check-fill bg-white text-primary p-1 rounded-circle"></i>
