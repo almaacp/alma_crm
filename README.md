@@ -44,7 +44,7 @@ composer install
 ### 4. **Migrasi dan Seeding Database**
 ```bash
 php artisan migrate
-php artisan db:seed
+php artisan db:seed --class=UserSeeder
 ```
 
 ### 5. **Konfigurasi `.env`**
